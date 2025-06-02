@@ -1,0 +1,116 @@
+/* styles.css */
+
+:root {
+  --cian: #00cfd1;
+  --negro: #0a0a0a;
+  --blanco: #ffffff;
+  --gris: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--blanco);
+  color: var(--negro);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* HEADER */
+
+.site-header {
+  background-color: var(--negro);
+  color: var(--blanco);
+  align-items: center; /* centra el contenido verticalmente */
+  padding: 0; /* elimina espacios internos */
+}
+
+.site-header .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem; /* solo padding lateral */
+}
+.logo img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: var(--cian);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--cian);
+}
+
+/* HERO */
+
+.hero {
+  background-color: var(--gris);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--negro);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--cian);
+  color: var(--blanco);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00b2b3;
+}
+
+/* FOOTER */
+
+.site-footer {
+  background-color: var(--negro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}

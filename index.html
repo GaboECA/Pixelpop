@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Pop | Accesorios geek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #typed-text {
+      color: #82529C;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-align: left;
+      text-shadow: 0 0 5px #82529C, 0 0 10px #82529C, 0 0 15px #82529C;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <!-- Logo SVG externo -->
+        <img src="recursos/Pixel Pop logo.svg" alt="Pixel Pop Logo" width="140" height="140">
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h2>Accesorios únicos para mundos únicos</h2>
+        <p id="typed-text"></p>
+        <a href="#catalogo" class="cta-button">Ver catálogo</a>
+      </div>
+    </section>
+
+    <!-- Catálogo, Sobre Pixel Pop y Contacto se agregarán después -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Pixel Pop. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const frases = [
+      "Accesorios únicos...",
+      "Para mundos mágicos...",
+      "Para gamers de corazón...",
+      "Para otakus y cinéfilos...",
+      "Para ti..."
+    ];
+
+    let indice = 0;
+    let letra = 0;
+    let borrando = false;
+    const velocidad = 80;
+    const pausa = 1200;
+    const textoElemento = document.getElementById("typed-text");
+
+    function escribir() {
+      const fraseActual = frases[indice];
+
+      if (!borrando) {
+        textoElemento.textContent = fraseActual.substring(0, letra++);
+        if (letra > fraseActual.length) {
+          borrando = true;
+          setTimeout(escribir, pausa);
+          return;
+        }
+      } else {
+        textoElemento.textContent = fraseActual.substring(0, letra--);
+        if (letra < 0) {
+          borrando = false;
+          indice = (indice + 1) % frases.length;
+        }
+      }
+      setTimeout(escribir, velocidad);
+    }
+
+    escribir();
+  </script>
+</body>
+</html>
